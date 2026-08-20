@@ -1,0 +1,14 @@
+*.log
+*.tmp
+bin/
+build/
+*.log
+*.tmp
+__pycache__/
+.env
+*.log
+*.tmp
+bin/
+build/
+__pycache__/
+.env
