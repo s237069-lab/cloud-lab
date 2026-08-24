@@ -12,3 +12,4 @@ bin/
 build/
 __pycache__/
 .env
+.env
