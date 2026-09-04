@@ -43,3 +43,7 @@ app.post('/api/students', async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
+// Thêm route cho trang chủ /
+app.get('/', (req, res) => {
+  res.send('API Backend đang hoạt động!');
+});

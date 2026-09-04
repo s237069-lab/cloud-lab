@@ -4,9 +4,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const Student = require("./models/Student");
 require("dotenv").config();
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect("mongodb+srv://cloud_user:Ly%40170905@cluster0.7idty7z.mongodb.net/cloud_lab?retryWrites=true&w=majority&appName=Cluster0")
   .then(() => {
-    console.log("MongoDB connected successfully");
+    console.log("MongoDB Atlas connected successfully!");
   })
   .catch((err) => {
     console.error("MongoDB connection error:", err);
