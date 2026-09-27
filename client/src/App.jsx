@@ -204,7 +204,7 @@ function App() {
       {/* =========================
           CÂU 47: DANH SÁCH SINH VIÊN
           ========================= */}
-      <h1>Danh sách sinh viên</h1>
+      <h1>Danh sách sinh viên - Version 2.0</h1>
 
       <table border="1">
         <thead>
