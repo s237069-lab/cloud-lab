@@ -1,5 +1,3 @@
-
-
 const express = require("express");
 const mongoose = require("mongoose");
 const Student = require("./models/Student");
@@ -21,8 +19,17 @@ app.get("/api/hello", (req, res) => {
         message: "Backend đang hoạt động!"
     });
 });
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    status: "UP",
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime()
+  });
+});
+
 app.listen(PORT, () => {
     console.log(`Server đang chạy tại http://localhost:${PORT}`);
+    console.log("Lab 06 - Testing Auto Deploy");
 });
 
 app.get('/api/students', async (req, res) => {

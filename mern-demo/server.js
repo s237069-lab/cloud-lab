@@ -2,6 +2,12 @@
 
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors"); // Thêm thư viện CORS
+
+const app = express();
+/*
+app.use(cors()); // Cho phép React truy cập API
+app.use(express.json());
 require("dotenv").config();
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
@@ -11,8 +17,7 @@ mongoose.connect(process.env.MONGODB_URI)
     console.error("MongoDB connection error:", err);
   });
 
-const app = express();
-
+*/
 const PORT = 5000;
 
 app.get("/api/hello", (req, res) => {
@@ -20,6 +25,16 @@ app.get("/api/hello", (req, res) => {
         message: "Backend đang hoạt động!"
     });
 });
+
+app.get('/health', (req, res) => {
+  res.status(200).json({
+    status: 'UP',
+    timestamp: new Date(),
+    uptime: process.uptime()
+  });
+});
+
+
 app.listen(PORT, () => {
     console.log(`Server đang chạy tại http://localhost:${PORT}`);
 });
